@@ -1,6 +1,7 @@
 // Words to filter
-let filterWords = ['syöpä']; 
+let filterWords = ['syöpä', 'syövän', 'syöpää']; 
 
+// IL
 let newsTitlesIL = document.querySelectorAll('.front-title');
 
 for (let title of newsTitlesIL) {
@@ -12,12 +13,13 @@ for (let title of newsTitlesIL) {
   }
 }
 
+// IS
+// Main articles
 let articlesIS = document.getElementsByTagName('article');
-console.log(articlesIS);
 
 for (let article of articlesIS) {
-  const spans = article.getElementsByTagName('span');
-  for (let span of spans) {
+  const spansArticles = article.getElementsByTagName('span');
+  for (let span of spansArticles) {
     for (let word of filterWords) {
       if (span.textContent.toLowerCase().includes(word.toLowerCase())) {
         article.style.display = 'none';
